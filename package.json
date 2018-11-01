@@ -1,0 +1,27 @@
+{
+  "name": "Pilot-Overview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "react": "webpack -d --watch",
+    "server": "nodemon server/index.js"
+  },
+  "author": "Louis Mun",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.0",
+    "jquery": "^3.1.1",
+    "nodemon": "^1.18.5",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
+}
