@@ -14,6 +14,7 @@ class App extends React.Component {
       email: '',
       totalFlights: 0,
       totalFlightsDuration: 0,
+      aircraft: [],
     }
     this.calculateFlightsDuration.bind(this);
   }
@@ -55,19 +56,20 @@ class App extends React.Component {
           `,
       }).then((result) => {
         console.log('results: ', result.data);
-        this.setState({ 
+        this.setState({
           name: result.data.data.account.owner.first_name + ' ' + result.data.data.account.owner.last_name,
           email: result.data.data.account.owner.email,
           totalFlights: result.data.data.account.flights.length,
-          totalFlightsDuration: this.calculateFlightsDuration(result.data.data.account.flights)
-         });
+          totalFlightsDuration: this.calculateFlightsDuration(result.data.data.account.flights),
+          aircraft: result.data.data.account.aircraft,
+        });
       });
   }
 
   render() {
     return (<div>
       <h1>Pilot Overview</h1>
-      <Info name={this.state.name} email={this.state.email} totalFlights={this.state.totalFlights} totalFlightsDuration={this.state.totalFlightsDuration} calculateFlightsDuration={this.calculateFlightsDuration} />
+      <Info aircraft={this.state.aircraft} calculateFlightsDuration={this.calculateFlightsDuration} name={this.state.name} email={this.state.email} totalFlights={this.state.totalFlights} totalFlightsDuration={this.state.totalFlightsDuration}  />
     </div>)
   }
 }

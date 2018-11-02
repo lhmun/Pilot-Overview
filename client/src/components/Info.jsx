@@ -1,10 +1,10 @@
 import React from 'react';
-import InfoFlights from './InfoFlights.jsx';
+import InfoAircraft from './InfoAircraft.jsx';
 
 
 
 const Info = (props) => (
-  
+
   <div>
     <h2> User Info</h2>
     <p><b>Name:</b> {props.name}</p>
@@ -15,9 +15,16 @@ const Info = (props) => (
       <p><b>Total Flights</b>: {props.totalFlights}</p>
       <p><b>Total Flight Time</b>: {props.totalFlightsDuration}</p>
     </div>}
-    <InfoFlights />
-    List of aircraft types with total flight time per eaceh aircraft type
-
+    <table>
+      <tbody>
+        <tr>
+          <th>Manufacturer</th>
+          <th>Model</th>
+          <th>Duration</th>
+        </tr>
+        {props.aircraft.map((item, index) => <InfoAircraft calculateFlightsDuration={props.calculateFlightsDuration} aircraft={item} key={index} />)}
+      </tbody>
+    </table>
   </div>
 )
 
