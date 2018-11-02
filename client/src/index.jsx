@@ -20,6 +20,11 @@ class App extends React.Component {
   }
 
   calculateFlightsDuration(arr) {
+
+    if (arr.length === 0) {
+      return '0 days 0 hours 0 minutes';
+    }
+
     let seconds = arr.map((a) => a.duration).reduce((prev, curr) => prev + curr);
     let days = Math.floor(seconds / 86400);
     let hours = Math.floor((seconds % 86400) / 3600);
@@ -69,7 +74,7 @@ class App extends React.Component {
   render() {
     return (<div>
       <h1>Pilot Overview</h1>
-      <Info aircraft={this.state.aircraft} calculateFlightsDuration={this.calculateFlightsDuration} name={this.state.name} email={this.state.email} totalFlights={this.state.totalFlights} totalFlightsDuration={this.state.totalFlightsDuration}  />
+      <Info aircraft={this.state.aircraft} calculateFlightsDuration={this.calculateFlightsDuration} name={this.state.name} email={this.state.email} totalFlights={this.state.totalFlights} totalFlightsDuration={this.state.totalFlightsDuration} />
     </div>)
   }
 }

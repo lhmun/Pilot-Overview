@@ -4,7 +4,7 @@ const InfoAircraft = (props) => (
   <tr>
     <td>{props.aircraft.manufacturer}</td>
     <td>{props.aircraft.model}</td>
-    <td>{}</td>
+    <td>{props.calculateFlightsDuration(props.aircraft.flights)}</td>
   </tr>
 )
 

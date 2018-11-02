@@ -22,7 +22,7 @@ const Info = (props) => (
           <th>Model</th>
           <th>Duration</th>
         </tr>
-        {props.aircraft.map((item, index) => <InfoAircraft calculateFlightsDuration={props.calculateFlightsDuration} aircraft={item} key={index} />)}
+        {props.aircraft.map((item, index) => <InfoAircraft calculateFlightsDuration={props.calculateFlightsDuration} aircraft={item} idx={index} key={index} />)}
       </tbody>
     </table>
   </div>
