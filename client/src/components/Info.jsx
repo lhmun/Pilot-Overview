@@ -1,10 +1,23 @@
 import React from 'react';
-import InfoItem from './InfoItem.jsx';
+import InfoFlights from './InfoFlights.jsx';
+
+
 
 const Info = (props) => (
+  
   <div>
-    <h4> Info Component </h4>
-    { props.items.map(item => <InfoItem item={item}/>)}
+    <h2> User Info</h2>
+    <p><b>Name:</b> {props.name}</p>
+    <p><b>Email:</b> {props.email}</p>
+
+    {<div>
+      <h2> Flight Info </h2>
+      <p><b>Total Flights</b>: {props.totalFlights}</p>
+      <p><b>Total Flight Time</b>: {props.totalFlightsDuration}</p>
+    </div>}
+    <InfoFlights />
+    List of aircraft types with total flight time per eaceh aircraft type
+
   </div>
 )
 
